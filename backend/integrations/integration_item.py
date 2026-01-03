@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import Optional, List
 
+
 class IntegrationItem:
     def __init__(
         self,
@@ -33,3 +34,9 @@ class IntegrationItem:
         self.delta = delta
         self.drive_id = drive_id
         self.visibility = visibility
+
+    def __repr__(self):
+        return f"IntegrationItem(id={self.id}, type={self.type}, name={self.name}, parent_id={self.parent_id}, parent_path_or_name={self.parent_path_or_name}, creation_time={self.creation_time}, last_modified_time={self.last_modified_time})"
+
+    def __str__(self):
+        return f"{self.id} {self.type} {self.name} {self.parent_id} {self.parent_path_or_name} {self.creation_time} {self.last_modified_time}"
